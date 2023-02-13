@@ -58,7 +58,7 @@ function generateMarkdown(data) {
   - [License](#license)
   - [Features](#features)
   - [How to Contribute](#how-to-contribute)
-  - [Test](#test)
+  - [Test](#tests)
   ${licenseLink}
   
   ## Installation
@@ -71,9 +71,9 @@ function generateMarkdown(data) {
   
   ## Questions
   
-  Here's my github username, feel free to contact me: (https://github.com/${github}/)
-  Here's my linkedin username, feel free to contact me: (http://linkdein.com/in/${linkedin}/)
-  Here's my email address, feel free to contact me: http://mailto:${email}
+  * Here's my github username, feel free to contact me: (https://github.com/${github}/)
+  * Here's my linkedin username, feel free to contact me: (http://linkdein.com/in/${linkedin}/)
+  * Here's my email address, feel free to contact me: http://mailto:${email}
   
   ## License
   

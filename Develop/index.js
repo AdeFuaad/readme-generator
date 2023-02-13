@@ -4,9 +4,7 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = 
-inquirer
-.prompt([
+const questions = [
     {
     type: 'input',
     message: 'What is your project title name?',
@@ -35,7 +33,7 @@ inquirer
     {
     type: 'input',
     message: 'What is the test instructions for your project',
-    name: 'test',
+    name: 'tests',
     },
     {
     type: 'input',
@@ -46,9 +44,15 @@ inquirer
     type: 'list',
     message: 'Select your license from the list?',
     name: 'license',
-    choices: ['No license', 'Apache License 2.0', 'MIT License', 'GNU General Public License v3.0', 
-    "BSD 2-Clause 'Simplified' License", 'Boost Software License 1.0', 'Mozilla Public License 2.0', 'The Unlicense',
-    'GNU General Public License v2.0', 'GNU Lesser General Public License v3.0']
+    choices: [
+    'Apache', 
+    'MIT', 
+    'GNU', 
+    "BSD", 
+    'Boost', 
+    'Mozilla', 
+    'Unlicense'
+    ]
     },
     {
     type: 'input',
@@ -65,19 +69,13 @@ inquirer
     message: 'What is your email address',
     name: 'email',
     },
-])
-// emptyInput ()
+];
 
-// .then ((response) => {
-//     const fileName = 'readme.me';
-//     const {name, description, installation, usage, contribution, features, test, license, linkedin, github, email} = data;
-// }
-// );
 
 function writeToFile(fileName, data) {
     let rmMarkDown = generateMarkdown(data);
-    fs.appendFile(fileName, rmMarkDown, (err) =>
-      err ? console.error(err) : console.log('Success!')
+    fs.appendFile(fileName, rmMarkDown, 'utf-8', (err) =>
+      err ? console.error(err) : console.log('ReadMe successfully created!')
     );
 }
 // TODO: Create a function to initialize app
@@ -85,15 +83,13 @@ function init() {
     inquirer
     .prompt(questions)
     .then((response) => {
-        writeToFile('userReadMe.md', response);
-    }).catch();
+        writeToFile('USERREADME.md', response);
+    })
+    .catch();
 }
+
 // Function call to initialize app
 init();
-
-// http://github.com/adefuaad/
-// http://linkdein.com/in/fuaad-shobambi/
-// adesholafuaad@gmail.com
 
 
 
